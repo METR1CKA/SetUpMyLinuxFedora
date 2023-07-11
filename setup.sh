@@ -44,6 +44,7 @@ update_upgrade() {
   echo -e "\n${greenColour}[+] Repositorios actualizados${endColour}"
 }
 
+# Instalacion de RPM FUSION
 rpm_fusion() {
   echo -e "\n${blueColour}[*] Habilitando RPM fusion${endColour}"
   sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
@@ -55,6 +56,7 @@ rpm_fusion() {
   echo -e "\n${greenColour}[+] RPM Habilitado${endColour}"
 }
 
+# Hostname opcional
 ch_hostname() {
   echo -e "\n${blueColour}[+] ¿Desea modificar el hostname?${endColour}\n"
   read -p "(s/n): " option
@@ -72,6 +74,7 @@ ch_hostname() {
   fi
 }
 
+# Audio codecs
 codecs() {
   echo -e "\n${blueColour}[*] Instalando codecs multimedia${endColour}"
   sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
@@ -86,7 +89,7 @@ then
   exit
 fi
 
-# Init process
+# Inicio de procesos
 slp
 echo -e "\n${yellowColour}[!] Iniciando procesos${endColour}"
 slp
