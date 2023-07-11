@@ -29,7 +29,7 @@ slp() {
 mod_repos() {
   echo -e "\n${blueColour}[*] Añadiendo configuraciones a dnf${endColour}"
   slp
-  content=$(cat "$DNF_CONF")
+  content=$(cat $DNF_CONF)
   echo "$content" | sudo tee -a /etc/dnf/dnf.conf > /dev/null
   echo -e "\n${greenColour}[+] Contenido añadido al archivo${endColour}"
 }
